@@ -1,0 +1,153 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "New Kumarika AD packshot 200ml with neck New Kumarika AD packshot 200ml with neck",
+      "category": ["hair", "Haircare", "Kumarika"],
+      "originalprice": 150,
+      "discount": 2,
+      "image": [
+        "assets/images/garnier.jpeg",
+        "assets/images/dabur-vatika75ml.webp"
+      ],
+      "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
+      "features": [
+        "Bluetooth 5.0",
+        "Noise Cancellation",
+        "20-hour Battery",
+        "Comfort Fit"
+      ],
+      "brands": "Ponds",
+      "rating": 4.5,
+      "stock": 50,
+      "weight": 60
+    },
+    {
+      "id": 2,
+      "name": "Sowrav Chandra Biswas",
+      "category": ["hair", "Haircare", "Kumarika"],
+      "originalprice": 100,
+      "discount": 5,
+      "image": [
+        "assets/images/Garnier-Light-Complete-Yoghurt-Night-Cream.webp",
+        "assets/images/dabur-vatika75ml.webp"
+      ],
+      "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
+      "features": [
+        "Bluetooth 5.0",
+        "Noise Cancellation",
+        "20-hour Battery",
+        "Comfort Fit"
+      ],
+      "brands": "Ponds",
+      "rating": 4.5,
+      "stock": 50
+    },
+    {
+      "id": 3,
+      "name": "skd",
+      "category": ["hair", "Haircare", "Kumarika"],
+      "originalprice": 130,
+      "image": [
+        "assets/images/Nirvana-Color-Nail-Enamel-Inspired-Me-06-1-1.webp",
+        "assets/images/dabur-vatika75ml.webp"
+      ],
+      "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
+      "features": [
+        "Bluetooth 5.0",
+        "Noise Cancellation",
+        "20-hour Battery",
+        "Comfort Fit"
+      ],
+      "brands": "Ponds",
+      "rating": 4.5,
+      "stock": 50
+    },
+    {
+      "id": 4,
+      "name": "skd",
+      "category": ["hair", "Haircare", "Kumarika"],
+      "originalprice": 120,
+      "discount": 4,
+      "image": [
+        "assets/images/YC-Whitening-Face-Wash-Milk-Extract-100ml.webp",
+        "assets/images/dabur-vatika75ml.webp"
+      ],
+      "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
+      "features": [
+        "Bluetooth 5.0",
+        "Noise Cancellation",
+        "20-hour Battery",
+        "Comfort Fit"
+      ],
+      "brands": "Ponds",
+      "rating": 4.5,
+      "stock": 50
+    },
+    {
+      "id": 6,
+      "name": "skd",
+      "category": ["hair", "Haircare", "Kumarika"],
+      "originalprice": 50,
+      "discount": 7,
+      "image": [
+        "assets/images/vaseline-loution-r.jpg",
+        "assets/images/dabur-vatika75ml.webp"
+      ],
+      "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
+      "features": [
+        "Bluetooth 5.0",
+        "Noise Cancellation",
+        "20-hour Battery",
+        "Comfort Fit"
+      ],
+      "brands": "Ponds",
+      "rating": 4.5,
+      "stock": 50
+    },
+    {
+      "id": 70,
+      "name": "skd",
+      "category": ["hair", "Haircare", "Kumarika"],
+      "originalprice": 70,
+      "discount": 1,
+      "image": [
+        "assets/images/Meril-Conditioning-Nail-Polish-Remover.webp",
+        "assets/images/dabur-vatika75ml.webp"
+      ],
+      "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
+      "features": [
+        "Bluetooth 5.0",
+        "Noise Cancellation",
+        "20-hour Battery",
+        "Comfort Fit"
+      ],
+      "brands": "Ponds",
+      "rating": 4.5,
+      "stock": 50
+    }
+  ],
+
+  "order": [
+    {
+      "id": 1,
+      "customer": "Jane Doe",
+      "total": 45.98,
+      "status": "Pending",
+      "items": [
+        { "name": "Hydrating Moisturizer", "qty": 1 },
+        { "name": "Matte Lipstick", "qty": 1 },
+        { "name": "Matte Lipstick", "qty": 1 },
+        { "name": "Matte Lipstick", "qty": 1 },
+        { "name": "Matte Lipstick", "qty": 1 }
+      ]
+    },
+    {
+      "id": 2,
+      "customer": "John Smith",
+      "total": 29.99,
+      "status": "Shipped",
+      "items": [{ "name": "Eyeliner", "qty": 1 }]
+    }
+  ]
+}
