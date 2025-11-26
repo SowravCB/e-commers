@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Make Over</title>
+    <link rel="icon" type="image/png" href="/assets/images/Group 2.png" sizes="16x16">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/account.css">
+    <link rel="stylesheet" href="../../font.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/account.js"></script>
+</head>
+
+<body>
+    <!-- Reuse your existing navbar and footer structure -->
+    <main>
+        <div class="account-container">
+            <div class="account-sidebar">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="" alt="Profile" id="userAvatar">
+                    </div>
+                    <h3 id="userName">Loading...</h3>
+                    <p id="userEmail">Loading...</p>
+                </div>
+                <div class="sidebar-menu">
+                    <button class="active" data-section="profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentcolor">
+                            <path
+                                d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+                        </svg>
+                        <span>Profile</span>
+                    </button>
+                    <button data-section="orders">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentcolor">
+                            <path
+                                d="M240-80q-50 0-85-35t-35-85v-120h120v-560h600v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-600H320v480h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h360v80H360Zm0 120v-80h360v80H360ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm0 0h-40 400-360Z" />
+                        </svg>
+                        <span>My Orders</span>
+                    </button>
+                    <button data-section="wishlist">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentcolor">
+                            <path
+                                d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />
+                        </svg>
+                        <span>Wishlist</span>
+                    </button>
+                    <button data-section="settings">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentcolor">
+                            <path
+                                d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                        </svg>
+                        <span>Settings</span>
+                    </button>
+                    <button id="logoutBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentcolor">
+                            <path
+                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                        </svg>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+            <div class="account-content">
+                <section id="profile" class="account-section active">
+                    <h2>My Profile</h2>
+                    <div class="profile-details">
+                        <div class="name-box">
+                            <div class="detail-group">
+                                <label>First Name</label>
+                                <p id="firstName">Loading...</p>
+                            </div>
+                            <div class="detail-group">
+                                <label>Last Name</label>
+                                <p id="lastName">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="detail-group">
+                            <label>Email</label>
+                            <p id="profileEmail">Loading...</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Phone</label>
+                            <p id="profilePhone">Loading...</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Address</label>
+                            <p id="profileAddress">Loading...</p>
+                        </div>
+                        <button id="editProfileBtn">Edit Profile</button>
+                    </div>
+                </section>
+
+                <section id="orders" class="account-section">
+                    <h2>My Orders</h2>
+                    <div id="ordersList" class="orders-list">
+                        <!-- Orders will be populated here -->
+                    </div>
+                </section>
+
+                <section id="wishlist" class="account-section">
+                    <h2>My Wishlist</h2>
+                    <div id="wishlistItems" class="wishlist-items">
+                        <!-- Wishlist items will be populated here -->
+                    </div>
+                </section>
+
+                <section id="settings" class="account-section">
+                    <h2>Account Settings</h2>
+                    <div class="settings-options">
+                        <div class="setting-group">
+                            <h3>Change Password</h3>
+                            <form id="changePasswordForm">
+                                <div class="cp-group">
+                                    <label>Current Password</label>
+                                    <input type="password" placeholder="Current Password" id="currentPassword">
+                                    <button id="currPassShow" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="currentColor">
+                                            <path d=" m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5
+                                        52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29
+                                        67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17
+                                        84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20
+                                        246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53
+                                        53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101
+                                        143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75
+                                        0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="cp-group">
+                                    <label>New Password</label>
+                                    <input type="password" placeholder="New Password" id="newPassword" required>
+                                    <button id="newPassShow" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="currentColor">
+                                            <path d=" m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5
+                                        52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29
+                                        67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17
+                                        84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20
+                                        246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53
+                                        53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101
+                                        143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75
+                                        0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="cp-group">
+                                    <label>Confirm New Password</label>
+                                    <input type="password" placeholder="Confirm New Password" id="confirmNewPassword"
+                                        required>
+                                    <button class="confNewPassShow" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="currentColor">
+                                            <path d=" m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5
+                                        52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29
+                                        67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17
+                                        84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20
+                                        246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53
+                                        53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101
+                                        143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75
+                                        0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <button type="submit">Update Password</button>
+                            </form>
+                        </div>
+                        <div class="setting-group">
+                            <h3>Notification Preferences</h3>
+                            <div class="notification-settings">
+                                <label>
+                                    <input type="checkbox" id="emailNotif"> Email Notifications
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="orderUpdates"> Order Updates
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="promotions"> Promotional Offers
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="/Make-Over/js/script.js"></script>
+    <script src="/Make-Over/js/account.js"></script>
+</body>
+
+</html>

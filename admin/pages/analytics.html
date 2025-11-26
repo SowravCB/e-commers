@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | Admin Panel</title>
+    <link rel="icon" type="image/png" href="/assets/images/Group 2.png" sizes="16x16">
+    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="../analytics-advanced.css">
+    <link rel="stylesheet" href="/font.css">
+    <link rel="stylesheet" href="/admin//admin.css">
+    <!-- Chart.js for analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <section class="admin-panel">
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar content will be dynamically loaded -->
+        </aside>
+
+        <section class="main">
+            <nav class="navbar" id="navbar">
+                <!-- Navbar content will be dynamically loaded -->
+            </nav>
+
+            <main class="main-container">
+                <div class="head-title">
+                    <div class="left">
+                        <h1>Analytics Dashboard</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="/admin/pages/dashboard.html">Dashboard</a></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                                </svg></li>
+                            <li><a href="#" class="active">Analytics</a></li>
+                        </ul>
+                    </div>
+                    <div class="date-filter">
+                        <select id="dateRange">
+                            <option value="7">Last 7 Days</option>
+                            <option value="30">Last 30 Days</option>
+                            <option value="90">Last 90 Days</option>
+                            <option value="365">Last Year</option>
+                        </select>
+                        <div class="export-actions">
+                            <button id="exportData" class="export-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor">
+                                    <path
+                                        d="M12 15.575q-.2 0-.375-.063-.175-.062-.325-.212L8.6 12.6q-.275-.275-.275-.7 0-.425.275-.7.275-.275.7-.275.425 0 .7.275l1.5 1.5V7.4q0-.425.288-.713.287-.287.712-.287t.713.287q.287.288.287.713v5.3l1.5-1.5q.275-.275.7-.275.425 0 .7.275.275.275.275.7 0 .425-.275.7l-2.7 2.7q-.15.15-.325.212-.175.063-.375.063ZM6 20q-.825 0-1.412-.587Q4 18.825 4 18v-1.075q0-.425.288-.713.287-.287.712-.287t.713.287Q6 16.5 6 16.925V18h12v-1.075q0-.425.288-.713.287-.287.712-.287t.713.287Q20 16.5 20 16.925V18q0 .825-.587 1.413Q18.825 20 18 20Z" />
+                                </svg>
+                                <span>Export Report</span>
+                            </button>
+                            <button id="printReport" class="print-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor">
+                                    <path
+                                        d="M18 19.25H6v-4.7h12Zm0-6.2H6q-1.25 0-2.125-.875T3 10.05q0-1.25.875-2.125T6 7.05h12q1.25 0 2.125.875T21 10.05q0 1.25-.875 2.125T18 13.05Zm0-1.5q.625 0 1.062-.438.438-.437.438-1.062 0-.625-.438-1.062-.437-.438-1.062-.438-.625 0-1.062.438-.438.437-.438 1.062 0 .625.438 1.062.437.438 1.062.438ZM16.5 6.3h-9V4.75h9Z" />
+                                </svg>
+                                <span>Print Report</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparative Analysis -->
+                <div id="comparativeAnalysis" class="comparative-analysis">
+                    <!-- Comparative analysis cards will be loaded here -->
+                </div>
+
+                <!-- Key Metrics Cards -->
+                <div class="analytics-cards" id="analytics-cards">
+                    <!-- analytics card will be load here -->
+                </div>
+
+                <!-- Charts Section -->
+                <div class="analytics-charts">
+                    <div class="chart-container">
+                        <h3>Revenue Overview</h3>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Orders Statistics</h3>
+                        <canvas id="ordersChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Top Products</h3>
+                        <canvas id="productsChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>User Growth</h3>
+                        <canvas id="usersChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Additional Stats -->
+                <div class="analytics-tables">
+                    <div class="table-container">
+                        <h3>Top Selling Products</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Sales</th>
+                                    <th>Revenue</th>
+                                    <th>Growth</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topProductsTable">
+                                <!-- Top products will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-container">
+                        <h3>Recent Transactions</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentTransactionsTable">
+                                <!-- Recent transactions will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Advanced Analytics Section -->
+                <div class="advanced-analytics">
+                    <div class="chart-container">
+                        <h3>Sales by Category</h3>
+                        <canvas id="categorySalesChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Geographic Distribution</h3>
+                        <canvas id="geographicChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Customer Segments</h3>
+                        <canvas id="customerSegmentsChart"></canvas>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </section>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script src="../js/analytics-advanced.js"></script>
+    <script src="/admin/js/notifications.js"></script>
+</body>
+
+</html>

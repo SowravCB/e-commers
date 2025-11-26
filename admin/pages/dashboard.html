@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel | Make Over</title>
+    <link rel="icon" type="image/png" href="/assets/images/Group 2.png" sizes="16x16">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <link rel="stylesheet" href="/admin/modal.css">
+    <link rel="stylesheet" href="/font.css">
+</head>
+
+<body>
+    <section class="admin-panel">
+        <!-- SIDE BAR START -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="/assets/svg/Group 4 (1).svg" alt="">
+            </div>
+            <div class="action-btn">
+                <div class="btn active">
+                    <a href="/admin/pages/dashboard.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+                <div class="btn">
+                    <a href="/admin/pages/products.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M240-80q-50 0-85-35t-35-85v-120h120v-560l60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-560H320v440h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h240v80H360Zm0 120v-80h240v80H360Zm320-120q-17 0-28.5-11.5T640-640q0-17 11.5-28.5T680-680q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600Zm0 120q-17 0-28.5-11.5T640-520q0-17 11.5-28.5T680-560q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm-40 0v-80 80Z" />
+                        </svg>
+                        <span>Products</span>
+                    </a>
+                </div>
+                <div class="btn">
+                    <a href="/admin/pages/customers.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M0-240v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5q72 0 116 26.5t44 70.5v63H780Zm-455-80h311q-10-20-55.5-35T480-370q-55 0-100.5 15T325-320ZM160-440q-33 0-56.5-23.5T80-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T160-440Zm640 0q-33 0-56.5-23.5T720-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T800-440Zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm0-80q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-560Zm1 240Zm-1-280Z" />
+                        </svg>
+                        <span>Customers</span>
+                    </a>
+                </div>
+                <div class="btn">
+                    <a href="/admin/pages/orders.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H240Zm0-80h480v-640h-80v280l-100-60-100 60v-280H240v640Zm0 0v-640 640Zm200-360 100-60 100 60-100-60-100 60Z" />
+                        </svg>
+                        <span>Orders</span>
+                    </a>
+                </div>
+                <div class="btn">
+                    <a href="/admin/pages/messages.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path d=" M240-400h480v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM880-80
+                            720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5
+                            23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z" />
+                        </svg>
+                        <span>Messages</span>
+                    </a>
+                </div>
+                <div class="btn">
+                    <a href="/admin/pages/analytics.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M480-80q-83 0-156-31.5t-127-86Q143-252 111.5-325T80-480q0-157 104-270t256-128v120q-103 14-171.5 92.5T200-480q0 116 82 198t198 82q66 0 123.5-28t96.5-76l104 60q-54 75-139 119.5T480-80Zm366-238-104-60q9-24 13.5-49.5T760-480q0-107-68.5-185.5T520-758v-120q152 15 256 128t104 270q0 44-8 85t-26 77Z" />
+                        </svg>
+                        <span>Analytics</span>
+                    </a>
+                </div>
+                <!-- <div class="btn">
+                    <a href="/admin/pages/reports.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                        </svg>
+                        <span>Reports</span>
+                    </a>
+                </div> -->
+                <div class="btn">
+                    <a href="/admin/pages/settings.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
+            <div class="logout-btn">
+                <div class="btn">
+                    <button id="logOutBtn">
+                        <svg xmlns=" http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                        </svg>
+                        <span>Log out</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <!-- SIDE BAR END -->
+        <section class="main">
+            <!-- NAVBAR START -->
+            <nav class="navbar" id="navbar">
+                <div class=" nav-left">
+                    <button class="menu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentcolor">
+                            <path
+                                d="M500-640v320l160-160-160-160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm120-80v-560H200v560h120Zm80 0h360v-560H400v560Zm-80 0H200h120Z" />
+                        </svg>
+                    </button>
+                    <h2 class="hadding">Category</h2>
+                </div>
+                <div class="search-box">
+                    <input type="search" id="searchInput" placeholder="Search...">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="currentColor">
+                        <path
+                            d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                    </svg>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-notification">
+                        <button id="notificationBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="currentColor">
+                                <path
+                                    d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
+                            </svg>
+                            <span class="notif-count">0</span>
+                        </button>
+                        <div class="nav-notification-dropdown" id="notificationDropdown">
+                            <!-- Notifications will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div class="profile-box">
+                        <button class="profile-img" id="profileBtn">
+                            <img src="/assets/images/profile pic.jpg" alt="profile picture" id="profileImg">
+                        </button>
+
+                        <div class="admin-profile" id="adminProfile">
+                            <div class="profile-header">
+                                <div class="profile-img">
+                                    <img src="/assets/images/profile pic.jpg" alt="">
+                                </div>
+                                <div class="name-role">
+                                    <span class="name">Sowrav Chandra Biswas</span>
+                                    <span class="role">Admin</span>
+                                </div>
+                            </div>
+                            <div class="profile-option">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="currentColor">
+                                        <path
+                                            d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+                                    </svg>
+                                    <span>My Account</span>
+                                </button>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="currentColor">
+                                        <path
+                                            d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                                    </svg>
+                                    <span>Settings</span>
+                                </button>
+                                <button>
+                                    <svg xmlns=" http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="currentColor">
+                                        <path
+                                            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                                    </svg>
+                                    <span>Log out</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+            <!-- NAVBAR END -->
+            <main class="main-container">
+                <!-- DASHBOARD START -->
+                <div class="head-title">
+                    <div class="left">
+                        <h1>Dashboard</h1>
+                        <ul class="breadcrumb">
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                                </svg>
+                            </li>
+                            <li>
+                                <a href="#" class="active">Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="download-btn" id="printPdf">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q17-72 85-137t145-65q33 0 56.5 23.5T520-716v242l64-62 56 56-160 160-160-160 56-56 64 62v-242q-76 14-118 73.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-48-22-89.5T600-680v-93q74 35 117 103.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm220-358Z" />
+                        </svg>
+                        <span class="text">PDF</span>
+                    </a>
+                </div>
+
+                <ul class="box-info">
+                    <li>
+                        <div class="info-left">
+                            <div class="info-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path
+                                        d="m136-240-56-56 296-298 160 160 208-206H640v-80h240v240h-80v-104L536-320 376-480 136-240Z" />
+                                </svg>
+                            </div>
+                            <p>Total Revenue</p>
+                            <span class="text">
+                                <h3>৳0.00</h3>
+                                <p>0% from last month</p>
+                            </span>
+                        </div>
+                        <div class="info-rigth revenue-chart"></div>
+                    </li>
+                    <li>
+                        <div class="info-left">
+                            <div class="info-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path
+                                        d="M160-120v-480h160v480H160Zm240 0v-640h160v640H400Zm240 0v-320h160v320H640Z" />
+                                </svg>
+                            </div>
+                            <p>Total Orders</p>
+                            <span class="text">
+                                <h3>0</h3>
+                                <p>All time orders</p>
+                            </span>
+                        </div>
+                        <div class="info-rigth orders-chart"></div>
+                    </li>
+                    <li>
+                        <div class="info-left">
+                            <div class="info-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path
+                                        d="M400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 15.5T180-306q-9 5-14.5 14t-5.5 20v32h244q10 21 23 39t29 35H80Zm560 40-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 10.5T776-436l58-18 40 68-46 40q2 14 2 26t-2 26l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80Zm40-120q33 0 56.5-23.5T760-320q0-33-23.5-56.5T680-400q-33 0-56.5 23.5T600-320q0 33 23.5 56.5T680-240ZM400-560q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Zm12 400Z" />
+                                </svg>
+                            </div>
+                            <p>Active Users</p>
+                            <span class="text">
+                                <h3>0</h3>
+                                <p>0% from last month</p>
+                            </span>
+                        </div>
+                        <div class="info-rigth users-chart"></div>
+                    </li>
+                    <li>
+                        <div class="info-left">
+                            <div class="info-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path
+                                        d="M280-280h80v-200h-80v200Zm160 0h80v-400h-80v400Zm160 0h80v-280h-80v280ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
+                                </svg>
+                            </div>
+                            <p>Low Stock</p>
+                            <span class="text">
+                                <h3>0</h3>
+                                <p>Products need attention</p>
+                            </span>
+                        </div>
+                        <div class="info-rigth stock-chart"></div>
+                    </li>
+                    <li>
+                        <div class="info-left">
+                            <div class="info-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path
+                                        d="m40-240 20-80h220l-20 80H40Zm80-160 20-80h260l-20 80H120Zm623 240 20-160 29-240 10-79-59 479ZM240-80q-33 0-56.5-23.5T160-160h583l59-479H692l-11 85q-2 17-15 26.5t-30 7.5q-17-2-26.5-14.5T602-564l9-75H452l-11 84q-2 17-15 27t-30 8q-17-2-27-15t-8-30l9-74H220q4-34 26-57.5t54-23.5h80q8-75 51.5-117.5T550-880q64 0 106.5 47.5T698-720h102q36 1 60 28t19 63l-60 480q-4 30-26.5 49.5T740-80H240Zm220-640h159q1-33-22.5-56.5T540-800q-35 0-55.5 21.5T460-720Z" />
+                                </svg>
+                            </div>
+                            <p>Total Sales</p>
+                            <span class="text">
+                                <h3>$52,245</h3>
+                                <p>Last 30 Days</p>
+                            </span>
+                        </div>
+                        <div class="info-rigth"></div>
+                    </li>
+                    <li>
+                        <div class="info-left">
+                            <div class="info-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path
+                                        d="M500-482q29-32 44.5-73t15.5-85q0-44-15.5-85T500-798q60 8 100 53t40 105q0 60-40 105t-100 53Zm220 322v-120q0-36-16-68.5T662-406q51 18 94.5 46.5T800-280v120h-80Zm80-280v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Zm-480-40q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM0-160v-112q0-34 17.5-62.5T64-378q62-31 126-46.5T320-440q66 0 130 15.5T576-378q29 15 46.5 43.5T640-272v112H0Zm320-400q33 0 56.5-23.5T400-640q0-33-23.5-56.5T320-720q-33 0-56.5 23.5T240-640q0 33 23.5 56.5T320-560ZM80-240h480v-32q0-11-5.5-20T540-306q-54-27-109-40.5T320-360q-56 0-111 13.5T100-306q-9 5-14.5 14T80-272v32Zm240-400Zm0 400Z" />
+                                </svg>
+                            </div>
+                            <p>New Customers</p>
+                            <span class="text">
+                                <h3>5,245</h3>
+                                <p>Last 24 Hours</p>
+                            </span>
+                        </div>
+                        <div class="info-rigth"></div>
+                    </li>
+                    <li>
+                        <div class="info-left">
+                            <div class="info-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path d=" M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29
+                            15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55
+                            44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0
+                            66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32
+                            41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47
+                            113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9
+                            5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5
+                            23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
+                                </svg>
+                            </div>
+                            <p>Visitors</p>
+                            <span class="text">
+                                <h3>12,245</h3>
+                                <p>Last 24 Hours</p>
+                            </span>
+                        </div>
+                        <div class="info-rigth"></div>
+                    </li>
+                </ul>
+
+                <div class="tables-data">
+                    <div class="orders">
+                        <div class="head">
+                            <h3>Recent Orders</h3>
+                            <div class="head-btn">
+                                <button class="add-order-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="currentColor">
+                                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                                    </svg>
+                                </button>
+                                <button class="view-all-orders-btn">View All</button>
+                            </div>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Order rows will be dynamically added here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="todo">
+                        <div class="head">
+                            <h3>Todos</h3>
+                            <div class="todo-btn">
+                                <button class="add-todo-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="currentColor">
+                                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <ul class="todo-list" id="todoList">
+                            <!-- Todo items will be dynamically added here by JavaScript -->
+                            <label>
+                                <input type="checkbox">
+                                <span class="text">Design new dashboard</span>
+                            </label>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path d="M120-120v-720h720v720H120Zm80-80h560v-560H200v560Zm80
+                                    -480h400v-80H280v80Zm0 160h400v-80H280v80Zm0 160h400v-80H280v80Z" />
+                                </svg>
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- DASHBOARD END -->
+            </main>
+        </section>
+
+    </section>
+
+
+
+    <!-- Load utilities first -->
+    <script src="/admin/js/utils.js"></script>
+
+    <!-- Load core admin functionality -->
+    <!-- <script src="/admin/js/admin.js"></script> -->
+
+    <!-- Load feature-specific scripts -->
+    <script src="/admin/js/search.js"></script>
+    <script src="/admin/js/notifications.js"></script>
+
+    <!-- Load page-specific script -->
+    <script src="/admin/js/dashboard.js"></script>
+    <script src="/admin/js/common.js"></script>
+</body>
+
+</html>

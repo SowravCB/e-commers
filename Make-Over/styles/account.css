@@ -1,0 +1,373 @@
+.account-container {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.account-sidebar {
+    flex: 0 0 250px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-menu button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    text-align: left;
+    background: none;
+    border: none;
+    border-radius: 45px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: var(--font);
+    color: #949494;
+    /* background: var(--bg-sec-color); */
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu button:hover,
+.sidebar-menu button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.sidebar-menu button#logoutBtn {
+    margin-top: 20px;
+    color: #dc3545;
+    /* border: 1px solid #dc3545; */
+}
+
+.sidebar-menu button#logoutBtn:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.account-content {
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-section {
+    display: none;
+}
+
+.account-section.active {
+    display: block;
+}
+
+.account-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.profile-details {
+    display: grid;
+    gap: 20px;
+}
+
+.profile-details .name-box {
+    display: flex;
+    gap: 15px;
+}
+
+.profile-details .name-box .detail-group {
+    flex: 1;
+}
+
+
+.detail-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-group label {
+    font-weight: 500;
+    color: #666;
+    margin-left: 5px;
+}
+
+
+.detail-group p {
+    position: relative;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    height: 20px;
+}
+
+.detail-group p.empty {
+    font-size: 14px;
+    color: #999;
+    font-style: italic;
+}
+
+.detail-group p input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    padding: 10px;
+    height: 20px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-family: var(--font);
+}
+
+.detail-group p input:hover,
+.detail-group p input:focus {
+    border: 1px solid var(--primary-color);
+}
+
+.detail-group textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-family: var(--font);
+    resize: vertical;
+    min-height: 60px;
+}
+
+.detail-group textarea:hover,
+.detail-group textarea:focus {
+    border: 1px solid var(--primary-color);
+}
+
+#editProfileBtn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 45px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#editProfileBtn:hover {
+    background: var(--hover-bg-sec-color);
+}
+
+/* Orders Section */
+.orders-list {
+    display: grid;
+    gap: 20px;
+}
+
+.order-item {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.order-item:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Wishlist Section */
+.wishlist-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.wishlist-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.wishlist-item:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Settings Section */
+.settings-options {
+    display: grid;
+    gap: 30px;
+}
+
+.setting-group {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.setting-group h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+#changePasswordForm {
+    display: grid;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+#changePasswordForm .cp-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#changePasswordForm .cp-group label {
+    font-weight: 500;
+    color: #666;
+    margin-left: 5px;
+}
+
+
+#changePasswordForm input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#changePasswordForm input:hover,
+#changePasswordForm input:focus {
+    border: 1px solid var(--primary-color);
+}
+
+#changePasswordForm button[type="button"] {
+    position: absolute;
+    right: 15px;
+    bottom: 1px;
+    padding: 5px 5px 3px 5px;
+    color: #c7c7c7;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+#changePasswordForm button[type="submit"] {
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#changePasswordForm button:hover {
+    background: var(--hover-bg-sec-color);
+}
+
+
+.message {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    /* width: -webkit-fill-available; */
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font);
+}
+
+.message.success {
+    background: #d4edda;
+    /* color: #155724; */
+    color: var(--primary-color);
+    font-weight: 500;
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+/* Notifications Section */
+
+.notification-settings {
+    display: grid;
+    gap: 10px;
+}
+
+.notification-settings label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        flex-direction: column;
+    }
+
+    .account-sidebar {
+        flex: none;
+    }
+}

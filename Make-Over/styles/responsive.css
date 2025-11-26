@@ -1,0 +1,216 @@
+:root {
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1400px;
+    --max-width: 1200px;
+
+
+    --font: 'Montserrat', sans-serif;
+
+    --bg-primary-color: #fff;
+    --bg-sec-color: #f5f5f5;
+    --bg-third-color: black;
+
+    --primary-color: #008000;
+
+    --hover-bg-pri-color: #555;
+    --hover-bg-sec-color: #006400;
+    --hover-color: #808080;
+
+    --shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    --shadow-1: 0 0 10px 0 rgba(129, 129, 129, .2)
+}
+
+@media screen and (max-width: 1080px) {
+    .product-container {
+        grid-template-columns: repeat(3, 1fr);
+        /* padding: 0; */
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .navbar .container {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .navbar .category {
+        display: none;
+    }
+
+    .navbar .container .menu ul li:nth-child(3) {
+        display: none;
+    }
+
+    .hero {
+        padding-bottom: 15px;
+    }
+
+    .dots {
+        bottom: -15px;
+    }
+
+    .dots span {
+        height: 8px;
+        width: 8px;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px 0;
+    }
+
+    .footer .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .bottom-bar {
+        /* display: grid;
+        grid-template-columns: repeat(3, 1fr); */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background: var(--bg-primary-color);
+        box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.1);
+        height: 65px;
+        position: sticky;
+        bottom: 0;
+    }
+
+    .bottom-bar a {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .bottom-bar div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .product-detail-card {
+        flex-direction: column;
+    }
+
+    .product-detail-card .product-detail-img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-detail-card .product-detail-info {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar .container {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .searchbox {
+        grid-column: span 2 / span 2;
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+
+    .menu {
+        grid-column-start: 2;
+        grid-row-start: 1;
+
+    }
+
+    .navbar .container .logo {
+        justify-content: left;
+    }
+
+    .navbar .container .logo img {
+        height: 35px;
+        padding: 0 0 10px 0;
+    }
+
+    .navbar .container .logo h2 {
+        font-size: 23px;
+        margin: 10px 0 10px 5px;
+    }
+
+    .navbar .category {
+        display: none;
+    }
+
+    .navbar .container .menu ul {
+        padding: 0;
+        justify-content: right;
+    }
+
+    .navbar .container .menu ul li {
+        padding: 8px;
+    }
+
+    /* .navbar .container .menu ul li:nth-child(2) {
+        display: none;
+    } */
+
+
+    .navbar .container .menu ul li svg {
+        height: 23px;
+        width: 23px;
+    }
+
+    .navbar .searchbox svg {
+        height: 23px;
+        width: 23px;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-container .product-box {
+        margin: 10px;
+    }
+
+    .product-container .product-box span {
+        padding: 0 2px 15px 2px;
+    }
+
+    .product-container .product-box .product-details .ifor-price {
+        font-size: 13px;
+    }
+
+    .product-container .product-box .product-details .price {
+        font-size: 15px;
+    }
+
+    .product-container .product-box .product-details button {
+        font-size: 13px;
+    }
+
+
+    .footer .footer-top {
+        grid-template-columns: repeat(1, 1fr)
+    }
+}
