@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="icon" type="image/png" href="/assets/images/Group 2.png" sizes="16x16">
+    <link rel="stylesheet" href="/admin/author.css">
+    <link rel="stylesheet" href="/font.css">
+</head>
+
+<body>
+    <div class="login-container">
+
+        <div class="signup-box">
+            <div class="logo">
+                <img src="/assets/images/logo.png" alt="">
+            </div>
+            <div class="signup-body">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <!-- <div class="new-from-group">
+                        <label for="newUsername">User Name</label>
+                        <input type="text" id="newUsername" placeholder="Username" required />
+                    </div> -->
+                    <div class="new-from-group">
+                        <label for="newEmail">Email</label>
+                        <input type="email" id="newEmail" placeholder="Email" required />
+                    </div>
+                    <div class="new-from-group">
+                        <label for="newPassword">Password</label>
+                        <input type="password" id="newPassword" placeholder="Password" required />
+                    </div>
+                    <div class="new-from-group">
+                        <label for="newPasswordConfirm">Confirm Password</label>
+                        <input type="password" id="newPasswordConfirm" placeholder="Confirm Password" required />
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p id="signupMessage"></p>
+                <p class="switch">Already have an account? <a href="/admin/pages/adminlogin.html">Log In</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="/admin/js/adminsignup.js"></script>
+</body>
+
+</html>

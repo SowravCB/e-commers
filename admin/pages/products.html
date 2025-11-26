@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Admin Panel</title>
+    <link rel="icon" type="image/png" href="/assets/images/Group 2.png" sizes="16x16">
+    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="../pages.css">
+    <link rel="stylesheet" href="/font.css">
+    <link rel="stylesheet" href="/admin/theme-notifications.css">
+</head>
+
+<body>
+    <section class="admin-panel">
+        <!-- Include the sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar content will be dynamically loaded -->
+        </aside>
+
+        <section class="main">
+            <!-- Include the navbar -->
+            <nav class="navbar" id="navbar">
+                <!-- Navbar content will be dynamically loaded -->
+            </nav>
+
+            <main class="main-container">
+                <div class="head-title">
+                    <div class="left">
+                        <h1>Products</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="/admin/pages/dashboard.html">Dashboard</a></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="currentColor">
+                                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                                </svg></li>
+                            <li><a href="#" class="active">Products</a></li>
+                        </ul>
+                    </div>
+                    <button class="add-btn" id="addProductBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
+                            fill="currentColor">
+                            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                        </svg>
+                        Add Product
+                    </button>
+                </div>
+
+                <div class="products-container">
+                    <div class="products-header">
+                        <div class="search-filter">
+                            <input type="search" id="productSearch" placeholder="Search products...">
+                            <select id="categoryFilter">
+                                <option value="">All Categories</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTableBody">
+                                <!-- Products will be dynamically loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </section>
+
+    <!-- Add Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Product</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <div class="form-group">
+                        <!-- <label for="productImage">Image URL</label>
+                        <input type="file" id="productImage" multiple accept="images/*" required> -->
+                        <img src="/assets/images/profile pic.jpg" height="50px" alt="" id="productImage">
+                        <button type="button" id="imgInputBtn"></button>
+                    </div>
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" placeholder="e. Jui Hair Fall Oil" required>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="productCategory">Category</label>
+                        <select id="productCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="hair">Hair Care</option>
+                            <option value="skin">Skin Care</option>
+                            <option value="makeup">Makeup</option>
+                        </select>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="productCategory">Category</label>
+                        <div class="multi-select" id="productCategory">
+                            <div class="selected-tags" id="selectedTags"></div>
+                            <div class="dropdown-btn">Select Category ▼</div>
+                            <div class="dropdown-list">
+                                <label><input type="checkbox" value="hair"> Hair Care</label>
+                                <label><input type="checkbox" value="skin"> Skin Care</label>
+                                <label><input type="checkbox" value="makeup"> Makeup</label>
+                                <label><input type="checkbox" value="fragrance"> Fragrance</label>
+                                <label><input type="checkbox" value="body"> Body Care</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group prices">
+                        <div class="price-box">
+                            <label for="productPrice">Price</label>
+                            <input type="number" id="productPrice" placeholder="e. 250" required>
+                        </div>
+                        <div class="discount-box">
+                            <label for="productDiscount">Discount (%)</label>
+                            <input type="number" id="productDiscount" placeholder="e. 10" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productStock">Stock</label>
+                        <input type="number" id="productStock" placeholder="e. 100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productDescription">Description</label>
+                        <textarea id="productDescription" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ProductFeatures">Features</label>
+                        <input type="text" id="ProductFeatures" placeholder="e. Paraben Free, Sulfate Free" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Save Product</button>
+                        <button type="button" class="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="productViewModal">
+
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="/admin/js/notifications.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Admin Panel</title>
+    <link rel="icon" type="image/png" href="/assets/images/Group 2.png" sizes="16x16">
+    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="../analytics-advanced.css">
+    <link rel="stylesheet" href="/font.css">
+    <link rel="stylesheet" href="/admin/settings.css">
+    <link rel="stylesheet" href="/admin/theme-notifications.css">
+</head>
+
+<body>
+    <section class="admin-panel">
+        <!-- Include the sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar content will be dynamically loaded -->
+        </aside>
+
+        <section class="main">
+            <!-- Include the navbar -->
+            <nav class="navbar" id="navbar">
+                <!-- Navbar content will be dynamically loaded -->
+            </nav>
+
+            <main class="main-container">
+                <div class="head-title">
+                    <div class="left">
+                        <h1>Settings</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="/admin/pages/dashboard.html">Dashboard</a></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px">
+                                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                                </svg></li>
+                            <li><a href="#" class="active">Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h2>Profile Settings</h2>
+                        <div class="profile-settings">
+                            <div class="avatar-section">
+                                <img src="/assets/svg/person.svg" alt="Profile Picture" id="profilePicture">
+                                <button class="change-avatar-btn">Change Picture</button>
+                            </div>
+                            <form id="profileForm" class="settings-form">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <button type="submit" class="save-btn">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>Security Settings</h2>
+                        <form id="securityForm" class="settings-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" name="currentPassword" required>
+                                <button id="currentPassVisibleIcon" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="currentColor">
+                                        <path d=" m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5
+                                        52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29
+                                        67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17
+                                        84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20
+                                        246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53
+                                        53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101
+                                        143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75
+                                        0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" name="newPassword" required>
+                                <button id="newPassVisibleIcon" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="currentColor">
+                                        <path d=" m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5
+                                        52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29
+                                        67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17
+                                        84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20
+                                        246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53
+                                        53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101
+                                        143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75
+                                        0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm New Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                <button id="ConfirmPassVisibleIcon" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="currentColor">
+                                        <path d=" m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5
+                                        52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29
+                                        67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17
+                                        84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20
+                                        246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53
+                                        53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101
+                                        143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75
+                                        0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <button type="submit" class="save-btn">Update Password</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>Notification Settings</h2>
+                        <div class="notification-settings">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>Email Notifications</h3>
+                                    <p>Receive notifications about orders and updates via email</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="emailNotifications" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>Order Updates</h3>
+                                    <p>Get notified when new orders are placed</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="orderNotifications" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>Stock Alerts</h3>
+                                    <p>Receive alerts when product stock is low</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="stockNotifications">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>Theme Settings</h2>
+                        <div class="theme-settings">
+                            <div class="theme-option">
+                                <input type="radio" id="lightTheme" name="theme" value="light" checked>
+                                <label for="lightTheme">
+                                    <div class="theme-preview light"></div>
+                                    <span>Light Theme</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" id="darkTheme" name="theme" value="dark">
+                                <label for="darkTheme">
+                                    <div class="theme-preview dark"></div>
+                                    <span>Dark Theme</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </section>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="/admin/js/notifications.js"></script>
+</body>
+
+</html>

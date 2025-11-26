@@ -1,0 +1,161 @@
+// Authentication Module
+const auth = {
+    // Check if user is logged in
+    isLoggedIn() {
+        return !!ApiService.getAuthToken();
+    },
+
+    // Get current user data
+    getCurrentUser() {
+        const userData = localStorage.getItem("loggedInUser");
+        try {
+            return userData ? JSON.parse(userData) : null;
+        } catch (error) {
+            console.error("Error parsing user data:", error);
+            return null;
+        }
+    },
+
+    // Login user
+    async login(email, password) {
+        try {
+            const response = await ApiService.login(email, password);
+            
+            if (!response || !response.user) {
+                throw new Error("Invalid response from server");
+            }
+
+            // Store user data
+            localStorage.setItem("loggedInUser", JSON.stringify(response.user));
+            this.startSession();
+
+            return {
+                success: true,
+                user: response.user
+            };
+        } catch (error) {
+            console.error("Login error:", error);
+            return {
+                success: false,
+                error: error.message || "Invalid email/username or password"
+            };
+        }
+    },
+
+    // Register new user
+    async register(userData) {
+        try {
+            // Validate required fields
+            if (!userData.username || !userData.email || !userData.password || !userData.phone) {
+                throw new Error("All fields are required");
+            }
+
+            // Validate email format
+            if (!this.isValidEmail(userData.email)) {
+                throw new Error("Invalid email format");
+            }
+
+            // Validate phone format
+            if (!/^\d{10}$/.test(userData.phone)) {
+                throw new Error("Phone number must be 10 digits");
+            }
+
+            // Validate password strength
+            if (!this.isStrongPassword(userData.password)) {
+                throw new Error("Password must be at least 8 characters long and contain letters, numbers, and special characters");
+            }
+
+            const response = await ApiService.register(userData);
+
+            if (!response || !response.user) {
+                throw new Error("Registration failed");
+            }
+
+            // Auto-login after successful registration
+            await this.login(userData.email, userData.password);
+
+            return {
+                success: true,
+                user: response.user
+            };
+        } catch (error) {
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    },
+
+    // Logout user
+    logout() {
+        try {
+            ApiService.logout();
+            this.endSession();
+            localStorage.removeItem("loggedInUser");
+            localStorage.removeItem("userSession");
+            // Use relative path for navigation
+            window.location.href = "../index.html";
+        } catch (error) {
+            console.error("Logout error:", error);
+            // Force logout even if API call fails
+            localStorage.removeItem("loggedInUser");
+            localStorage.removeItem("userSession");
+            window.location.href = "../index.html";
+        }
+    },
+
+    // Session management
+    startSession() {
+        const session = {
+            id: crypto.randomUUID(),
+            startTime: new Date().toISOString(),
+            lastActivity: new Date().toISOString()
+        };
+        localStorage.setItem("userSession", JSON.stringify(session));
+        this.setupActivityMonitoring();
+    },
+
+    endSession() {
+        localStorage.removeItem("userSession");
+    },
+
+    updateActivity() {
+        const session = JSON.parse(localStorage.getItem("userSession"));
+        if (session) {
+            session.lastActivity = new Date().toISOString();
+            localStorage.setItem("userSession", JSON.stringify(session));
+        }
+    },
+
+    setupActivityMonitoring() {
+        // Update last activity on user interactions
+        ["click", "keypress", "scroll", "mousemove"].forEach(event => {
+            document.addEventListener(event, () => this.updateActivity());
+        });
+
+        // Check session validity every minute
+        setInterval(() => {
+            const session = JSON.parse(localStorage.getItem("userSession"));
+            if (session) {
+                const lastActivity = new Date(session.lastActivity);
+                const now = new Date();
+                // Log out after 30 minutes of inactivity
+                if (now - lastActivity > 30 * 60 * 1000) {
+                    this.logout();
+                }
+            }
+        }, 60000);
+    },
+
+    // Utility functions
+    isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    },
+
+    isStrongPassword(password) {
+        return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password);
+    }
+};
+
+// Export auth module
+window.auth = auth;
