@@ -168,9 +168,13 @@ function addDataToHTML(productsToDisplay) {
           (product.originalprice * product.discount) / 100
         : product.originalprice;
 
+      const mainImage = Array.isArray(product.image)
+        ? product.image.find((img) => img.isMain)?.url || product.image[0]
+        : product.image;
+
       productBox.innerHTML = `
         <div class="product-img">
-                      <img src="${product.image[0]}" alt="${product.name}">
+                      <img src="${mainImage}" alt="${product.name}">
                   </div>
                   <div class="product-details">
                       <h3>${productName}</h3>
@@ -196,7 +200,7 @@ function addDataToHTML(productsToDisplay) {
       // Add click event for the entire product box
       productBox.addEventListener("click", (event) => {
         // Check if clicked element is not the Add to Cart button
-        if (!event.target.classList.contains("add-to-cart")) {
+        if (!event.target.classList.contains(".add-to-cart")) {
           window.location.href = `/Make-Over/pages/details.html?id=${product.id}`;
         }
       });
@@ -207,6 +211,14 @@ function addDataToHTML(productsToDisplay) {
         event.stopPropagation(); // Prevent product box click event
         let productId = event.target.dataset.id;
         addToCart(productId);
+
+        addToCartBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="20px" fill="currentcolor"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg> Added!`;
+        addToCartBtn.style.background = "#FF3EA3";
+
+        setTimeout(() => {
+          addToCartBtn.textContent = "Add to Cart";
+          addToCartBtn.style.background = "";
+        }, 2000);
       });
     });
   }
@@ -285,10 +297,15 @@ const addCartToHTML = () => {
       let productPrice = info.discount
         ? info.originalprice - (info.originalprice * info.discount) / 100
         : info.originalprice;
+
+      const mainImage = Array.isArray(info.image)
+        ? info.image.find((img) => img.isMain)?.url || info.image[0]
+        : info.image;
+
       totalQuantity = totalQuantity + cart.quantity;
       subtotal += productPrice * cart.quantity;
       newCartItem.innerHTML = ` <div class="item-img">
-                          <img src="${info.image[0]}" alt="${info.name}">
+                          <img src="${mainImage}" alt="${info.name}">
                       </div>
                       <div class="item-details">
                           <h3>${cartProductName}</h3>
@@ -367,9 +384,8 @@ const changeQuantity = (productId, type) => {
   addCartToHTML();
 };
 
-const deleateBtn = document.querySelectorAll(".delete-btn");
-deleateBtn.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
+cartBody.addEventListener("click", (e) => {
+  if (e.target.closest(".delete-btn")) {
     let productId = e.target.closest(".cart-item").dataset.id;
     let positionItemInCart = shoppingCart.findIndex(
       (value) => value.productId == productId
@@ -378,7 +394,7 @@ deleateBtn.forEach((btn) => {
     shoppingCart.splice(positionItemInCart, 1);
     addCartToMemory();
     addCartToHTML();
-  });
+  }
 });
 
 // Carousel
@@ -475,6 +491,11 @@ const initApp = async () => {
     document.getElementById("productContainer").innerHTML =
       '<div class="error-message">Unable to load products. Please try again later.</div>';
   }
+
+  if (localStorage.getItem("wishlist")) {
+    const wishlistData = JSON.parse(localStorage.getItem("wishlist"));
+    updateWishListDisplay(wishlistData);
+  }
 };
 
 // Function to update cart display
@@ -492,3 +513,19 @@ const updateCartDisplay = () => {
   addCartToHTML();
 };
 initApp();
+
+let navbar = gsap.timeline({ paused: true });
+navbar.from(".navbar", { y: -100, opacity: 0, duration: 0.5, stagger: 0.4 });
+navbar.play();
+navbar.from(".navbar .category", {
+  y: -50,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2,
+});
+navbar.from(".bottom-bar", {
+  y: 50,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2,
+});

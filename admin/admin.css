@@ -104,7 +104,7 @@ body.dark-theme {
     --bg-primary-color: #fff;
     --bg-sec-color: #f5f5f5;
     --bg-third-color: #000000;
-
+    --bg-light-color: #f8fafc;
     --primary-color: #008000;
 
     --hover-bg-pri-color: #555;
@@ -137,7 +137,7 @@ body.dark-theme {
     grid-template-rows: auto 1fr auto;
     position: sticky;
     top: 0;
-    width: 300px;
+    width: 200px;
     height: 100vh;
     inset: 0 0 0 0;
     background: var(--bg-primary-color);
@@ -249,13 +249,17 @@ body.dark-theme {
 }
 
 .sidebar .action-btn .btn.active a {
-    color: var(--primary-color);
-    background: var(--bg-primary-color)
+    background: var(--primary-color);
+    color: var(--bg-primary-color);
+    /* color: var(--primary-color);
+    background: var(--bg-primary-color) */
 }
 
 .sidebar .action-btn .btn a:hover {
-    color: var(--primary-color);
-    background: var(--bg-primary-color);
+    background: var(--primary-color);
+    color: var(--bg-primary-color);
+    /* color: var(--primary-color);
+    background: var(--bg-primary-color); */
 }
 
 .sidebar.hide .action-btn .btn a span {
@@ -303,8 +307,12 @@ body.dark-theme {
 
 .main {
     background: var(--bg-sec-color);
-    width: 100%;
+    width: calc(100% - 200px);
     z-index: 20;
+}
+
+.sidebar.hide+.main {
+    width: calc(100% - 60px);
 }
 
 /* NAVBAR START */
@@ -723,6 +731,7 @@ body.dark-theme {
 .main-container .head-title .left h1 {
     margin: 0;
     font-size: 25px;
+    font-size: clamp(20px, 3vw, 25px);
     color: var(--hover-bg-pri-color);
 }
 
@@ -738,13 +747,19 @@ body.dark-theme {
     align-items: center;
     gap: 10px;
     border-radius: 25px;
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     font-weight: 500;
     font-family: var(--font);
 }
 
 .main-container .head-title button:hover {
     background: var(--hover-bg-sec-color);
+    color: var(--bg-primary-color);
+}
+
+.main-container .head-title button svg {
+    height: clamp(12px, 2vw, 14px);
+    width: clamp(12px, 2vw, 14px);
     color: var(--bg-primary-color);
 }
 
@@ -767,7 +782,7 @@ body.dark-theme {
 .main-container .head-title .left ul li a {
     text-decoration: none;
     color: var(--hover-color);
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     font-family: var(--font);
     font-weight: 500;
     padding: 5px 0;
@@ -1309,6 +1324,14 @@ body.dark-theme {
         height: 18px;
         width: 18px;
     }
+
+    .main {
+        width: calc(100% - 75px);
+    }
+
+    .main-container {
+        padding: 10px;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -1334,9 +1357,9 @@ body.dark-theme {
         display: none;
     }
 
-    .navbar .search-box input {
+    /* .navbar .search-box input {
         display: none;
-    }
+    } */
 
     .navbar .search-box svg {
         right: 0;

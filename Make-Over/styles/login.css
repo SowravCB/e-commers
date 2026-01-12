@@ -138,12 +138,12 @@ main {
 }
 
 .login-body .form-group:nth-child(1) .svg1,
-.login-body .form-group:nth-child(3) .svg1,
+.login-body .form-group:nth-child(2) .svg1,
 .signup-body .form-group:nth-child(2) .svg1,
 .signup-body .form-group:nth-child(3) .svg1,
 .signup-body .form-group:nth-child(4) .svg1 {
     position: absolute;
-    bottom: 10px;
+    top: 40px;
     left: 10px;
     color: #bebaba;
 }
@@ -164,7 +164,7 @@ main {
     /* color: var(--hover-bg-pri-color); */
     color: #b4b2b2;
     right: 5px;
-    bottom: 4px;
+    top: 35px;
     cursor: pointer;
 }
 

@@ -6,13 +6,32 @@
       "category": ["skein", "Skincare", "personal-care"],
       "originalprice": 150,
       "discount": 2,
+
       "image": [
-        "/assets/images/ponds-most.jpg",
-        "/assets/images/ponds-most.1.jpg",
-        "/assets/images/ponds-most.2.jpg",
-        "/assets/images/ponds-most.3.jpg",
-        "/assets/images/ponds-most.4.jpg",
-        "/assets/images/ponds-most.5.jpg"
+        {
+          "url": "/assets/images/ponds-most.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/ponds-most.1.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/ponds-most.2.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/ponds-most.3.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/ponds-most.4.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/ponds-most.5.jpg",
+          "isMain": false
+        }
       ],
       "description": "It’s time to get nourished and hydrated skin with Pond’s Hydrated Glow Hyaluronic & Vitamin E Super Light Gel. It helps you get a perfectly moisturized and soft feel that lasts all day long. Lightweight & non-sticky. 24-hour moisture lock. Suitable for all skin types. Country of Origin: India.",
       "features": [
@@ -34,7 +53,16 @@
       "category": ["Skincare", "uv-protection", "sun-care"],
       "originalprice": 850,
       "discount": 20,
-      "image": ["/assets/images/uv.jpg", "/assets/images/uv.1.jpg"],
+      "image": [
+        {
+          "url": "/assets/images/uv.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/uv.1.jpg",
+          "isMain": false
+        }
+      ],
       "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
       "features": [
         "Bluetooth 5.0",
@@ -56,12 +84,28 @@
       "originalprice": 1850,
       "discount": 20,
       "image": [
-        "/assets/images/soft-finish.jpg",
-        "/assets/images/soft-finish.-1.jpg",
-        "/assets/images/soft-finish.-2.jpg",
-        "/assets/images/soft-finish.-3.jpg",
-        "/assets/images/soft-finish.-4.jpg"
+        {
+          "url": "/assets/images/soft-finish.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/soft-finish.-1.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/soft-finish.-2.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/soft-finish.-3.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/soft-finish.-4.jpg",
+          "isMain": false
+        }
       ],
+
       "description": "MISSHA All Around Safe Block Soft Finish Sun Milk SPF50+/PA+++ is lightweight and refreshing sun milk formula, perfect for daily use. At the same time, it is water and sweat resistant too. UV Protection Non-irritating Formula Dermatologically Tested",
       "features": [
         "Bluetooth 5.0",
@@ -83,8 +127,14 @@
       "originalprice": 750,
       "discount": 7,
       "image": [
-        "/assets/images/garnier-cleanser.jpg",
-        "/assets/images/garnier-cleanser-1.jpg"
+        {
+          "url": "/assets/images/garnier-cleanser.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/garnier-cleanser-1.jpg",
+          "isMain": false
+        }
       ],
       "description": "Discover an all-in-one cleanser that's specifically formulated for sensitive skin. Enjoy that squeaky-clean feeling with no running water or harsh rubbing required. This Garnier Micellar Cleansing Water gently removes makeup and impurities in one quick, easy step - giving you smooth, clean and soothes skin. We've combined revolutionary Micellar technology, to remove makeup and leave skin clean. The best bit? There's no need to scrub or rinse, perfect for sensitive skin. The Results: Perfectly cleansed, soothed skin without rubbing or rinsing. Even for sensitive skin Removes make-up + cleanses + soothes No rinsing Face, eyes, lips - no perfume Hypoallergenic Dermatologically and ophthalmologically tested Country of Origin: Poland.",
       "features": [
@@ -107,8 +157,14 @@
       "originalprice": 950,
       "discount": 16,
       "image": [
-        "/assets/images/simple-moist.jpg",
-        "/assets/images/simple-moist-1.jpg"
+        {
+          "url": "/assets/images/simple-moist.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/simple-moist-1.jpg",
+          "isMain": false
+        }
       ],
       "description": "Simple Kind to Skin Hydrating Light Moisturiser from the UK’s #1 facial skin care brand provides your skin with instant lightweight hydration This facial moisturiser keeps your skin feeling soft, smooth and perfectly hydrated for up to 12 hours Our face moisturiser is made with skin-loving ingredients, such as pro-vitamin B5, vitamin E and bisabolol This hydrating moisturiser contains no artificial perfume or colour, and no harsh chemicals that can upset your skin Simple Hydrating Light Moisturiser is vegan and certified cruelty-free by PETA – we don’t test on animals anywhere in the world Did you notice that this bottle of moisturiser is a little darker than usual? That’s because it’s made from 100% post-consumer recycled plastic!",
       "features": [
@@ -131,11 +187,26 @@
       "originalprice": 220,
       "discount": 2,
       "image": [
-        "/assets/images/lux-body-wash.png",
-        "/assets/images/lux-body-wash-1.png",
-        "/assets/images/lux-body-wash-2.png",
-        "/assets/images/lux-body-wash-3.png",
-        "/assets/images/lux-body-wash-4.png"
+        {
+          "url": "/assets/images/lux-body-wash.png",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/lux-body-wash-1.png",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/lux-body-wash-2.png",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/lux-body-wash-3.png",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/lux-body-wash-4.png",
+          "isMain": false
+        }
       ],
       "description": "Indulge in the captivating fragrance of Lux Body Wash Black Orchid Scent and Juniper Oil. This luxurious body wash comes in a convenient 245ml bottle and offers a sensory experience like no other. Immerse yourself in the enchanting aroma of black orchids, perfectly complemented by the invigorating essence of juniper oil. The rich, creamy lather gently cleanses your skin, leaving it feeling refreshed, soft, and smooth. Lux Body Wash is formulated with Moisture Lock technology to help retain your skin's natural moisture, keeping it hydrated and supple. Treat yourself to the opulence of black orchids and the rejuvenating properties of juniper oil, transforming your shower into a moment of pure indulgence and self-care. Lux Body Wash Black Orchid Scent and Juniper Oil will elevate your bathing routine, leaving you feeling pampered and refreshed.",
       "features": [
@@ -158,8 +229,14 @@
       "originalprice": 220,
       "discount": 5,
       "image": [
-        "/assets/images/ponds-super-light-gel-hydra-miracle-with-hyaluronic-acid-25ml-2.jpg",
-        "/assets/images/ponds-super-light-gel-hydra-miracle-with-hyaluronic-acid-25ml.jpg"
+        {
+          "url": "/assets/images/ponds-super-light-gel-hydra-miracle-with-hyaluronic-acid-25ml-2.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/ponds-super-light-gel-hydra-miracle-with-hyaluronic-acid-25ml.jpg",
+          "isMain": false
+        }
       ],
       "description": "Looking for 24 hours of moisturization for your skin? Look no further Introducing the all new Pond’s Super Light Gel - your go-to moisturizer for all seasons. Infused with the goodness of Hyaluronic Acid, Vitamin E and Glycerine, this super light moisturizer absorbs faster than regular creams and gives 24-hour hydration. Country of origin: India",
       "features": [
@@ -182,13 +259,22 @@
       "originalprice": 215,
       "discount": 8,
       "image": [
-        "/assets/images/secret-onion.jpg",
-        "/assets/images/secret-onion-2.jpg",
-        "/assets/images/secret-onion-3.jpg",
-        "/assets/images/secret-onion-4.jpg",
-        "/assets/images/secret-onion-4.jpg",
-        "/assets/images/secret-onion-4.jpg",
-        "/assets/images/secret-onion-4.jpg"
+        {
+          "url": "/assets/images/secret-onion.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/secret-onion-2.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/secret-onion-3.jpg",
+          "isMain": false
+        },
+        {
+          "url": "/assets/images/secret-onion-4.jpg",
+          "isMain": false
+        }
       ],
       "description": "Looking for 24 hours of moisturization for your skin? Look no further Introducing the all new Pond’s Super Light Gel - your go-to moisturizer for all seasons. Infused with the goodness of Hyaluronic Acid, Vitamin E and Glycerine, this super light moisturizer absorbs faster than regular creams and gives 24-hour hydration. Country of origin: India",
       "features": [
@@ -211,8 +297,14 @@
       "originalprice": 250,
       "discount": 0,
       "image": [
-        "/assets/images/kumarics-200ml.jpg",
-        "/assets/images/kumarics-200ml-1.jpg"
+        {
+          "url": "/assets/images/kumarics-200ml.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/kumarics-200ml-1.jpg",
+          "isMain": false
+        }
       ],
       "description": "Vitamin E of Almond - nourishes scalp and makes hair smooth and shiny. Brahmi - provide extra nutrition. Amla - Strengthens the root of the hair. Aloe-Vera - Adds moisture to the scalp and hair. Virgin coconut oil - makes hair thick, black and smooth.Mukunuwenna - helps to grow hair and makes hair shiny. Vetiver - helps to maintain good healthy scalp.",
       "features": [
@@ -235,8 +327,14 @@
       "originalprice": 320,
       "discount": 0,
       "image": [
-        "/assets/images/jui-haircare.jpg",
-        "/assets/images/jui-haircare-1.jpg"
+        {
+          "url": "/assets/images/jui-haircare.jpg",
+          "isMain": true
+        },
+        {
+          "url": "/assets/images/jui-haircare-1.jpg",
+          "isMain": false
+        }
       ],
       "description": "Jui Hair Care is light & non-sticky, a composition of 10 essential oils and 5 necessary vitamins which ensures maximum nourishment of the hair. Jui Hair Care is highly enriched in Vitamin E (1000 times more vitamin E compare to ordinary hair oils) & A, which ensures hair’s protection from the harmful UV radiation of the sun. Vitamin B increases hair growth cells assisting in new hairs to grow faster. Vitamin C reduces the presence of iron on the scalp and increases strength from the root. Vitamin F controls hair damage, cancels dryness and amplifies natural shine. Main Ingredients: Mineral Oil, Wheat Germ Oil, Dragobotania, 10 essential herbal extracts, 5 essential vitamins, perfume, oil soluble green color. Country of Origin: Bangladesh.",
       "features": [
@@ -309,18 +407,43 @@
         "zipCode": "2000"
       },
       "orderDate": "2025-10-11T15:45:00Z"
+    },
+    {
+      "id": "ORD003",
+      "customerId": "USR003",
+      "customerName": "John Smith",
+      "email": "habib@gmail.com",
+      "products": [
+        {
+          "id": 2,
+          "name": "Garnier Face Wash",
+          "quantity": 1,
+          "price": 220
+        }
+      ],
+      "total": 220,
+      "status": "Delivered",
+      "paymentMethod": "Cash on Delivery",
+      "shippingAddress": {
+        "street": "456 Park Avenue",
+        "city": "Chittagong",
+        "state": "Chittagong",
+        "country": "Bangladesh",
+        "zipCode": "2000"
+      },
+      "orderDate": "2025-10-11T15:45:00Z"
     }
   ],
   "users": [
     {
       "id": "USR001",
-      "firstName": "Sowrav",
-      "lastName": "Chnadra Biswas",
-      "email": "sow@gmail.com",
+      "firstName": "Habib",
+      "lastName": "Ahmed",
+      "email": "habib@gmail.com",
       "password": "123",
       "role": "customer",
-      "avatar": "/assets/images/profile pic.jpg",
-      "phone": "+8801323804759",
+      "avatar": "",
+      "phone": "+8801827068023",
       "status": "active",
       "registeredDate": "2025-09-15T08:30:00Z",
       "lastLogin": "2025-10-12T09:45:00Z",
@@ -339,14 +462,19 @@
       ],
       "address": "",
       "currentPassword": "sow",
-      "newPassword": "12345"
+      "newPassword": "12345",
+      "preferences": {
+        "emailNotifications": false,
+        "orderUpdates": false,
+        "promotions": false
+      }
     },
     {
       "id": "USR002",
       "firstName": "John",
       "lastName": "Smith",
       "email": "john@example.com",
-      "password": "123gdb%%%fsdf",
+      "password": "sow",
       "role": "customer",
       "avatar": "/assets/images/profile pic.jpg",
       "phone": "+880198765432",
@@ -365,7 +493,15 @@
           "zipCode": "2000",
           "isDefault": true
         }
-      ]
+      ],
+      "address": "",
+      "currentPassword": "sow",
+      "newPassword": "12345",
+      "preferences": {
+        "emailNotifications": true,
+        "orderUpdates": true,
+        "promotions": true
+      }
     },
     {
       "id": "ADM001",
@@ -433,6 +569,66 @@
       "message": "Is this product in stock?",
       "status": "read",
       "createdAt": "2025-10-12T09:20:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Skincare",
+      "subcategories": [
+        "Moisturizers",
+        "Cleansers",
+        "Face Wash",
+        "Serums",
+        "Masks"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Haircare",
+      "subcategories": [
+        "Hair Oil",
+        "Shampoo",
+        "Conditioner",
+        "Hair Growth",
+        "Hair Fall Control"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Makeup",
+      "subcategories": [
+        "Foundation",
+        "Lipstick",
+        "Eyeshadow",
+        "Mascara",
+        "Blush"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Fragrance",
+      "subcategories": ["Perfume", "Cologne", "Body Spray", "Deodorant"]
+    },
+    {
+      "id": 5,
+      "name": "Body Care",
+      "subcategories": ["Body Wash", "Body Lotion", "Body Scrub", "Body Butter"]
+    },
+    {
+      "id": 6,
+      "name": "Sun Care",
+      "subcategories": [
+        "Sunscreen",
+        "Sun Milk",
+        "UV Protection",
+        "SPF Products"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Personal Care",
+      "subcategories": ["Soaps", "Sanitizers", "Toothpaste", "Skincare"]
     }
   ]
 }

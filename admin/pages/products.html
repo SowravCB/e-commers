@@ -88,25 +88,40 @@
             </div>
             <div class="modal-body">
                 <form id="productForm">
-                    <div class="form-group">
-                        <!-- <label for="productImage">Image URL</label>
-                        <input type="file" id="productImage" multiple accept="images/*" required> -->
-                        <img src="/assets/images/profile pic.jpg" height="50px" alt="" id="productImage">
-                        <button type="button" id="imgInputBtn"></button>
+                    <!-- image uoload section -->
+                    <div class="form-group image-upload-section">
+                        <label class="required">Product Images</label>
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">📷</div>
+                            <div class="upload-text">Drag & drop images here</div>
+                            <div class="upload-subtext">or click to browse</div>
+                            <div class="upload-subtext">Supports JPG, PNG, WEBP (Max 5MB each)</div>
+                            <button type="button" class="upload-btn"
+                                onclick="document.getElementById('fileInput').click()">
+                                Browse Files
+                            </button>
+                            <input type="file" id="fileInput" class="image-input" multiple accept="image/*">
+                        </div>
+
+                        <div class="image-preview-container" id="imagePreview">
+                            <!-- Images will appear here -->
+                            <div class="image-preview empty-state">
+                                <div
+                                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: var(--hover-color); padding: 20px;">
+                                    <div style="font-size: 32px; margin-bottom: 8px;">🖼️</div>
+                                    <div style="font-size: 10px; text-align: center;">No images uploaded yet</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- product name -->
                     <div class="form-group">
                         <label for="productName">Product Name</label>
                         <input type="text" id="productName" placeholder="e. Jui Hair Fall Oil" required>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="productCategory">Category</label>
-                        <select id="productCategory" required>
-                            <option value="">Select Category</option>
-                            <option value="hair">Hair Care</option>
-                            <option value="skin">Skin Care</option>
-                            <option value="makeup">Makeup</option>
-                        </select>
-                    </div> -->
+
+                    <!-- product category -->
                     <div class="form-group">
                         <label for="productCategory">Category</label>
                         <div class="multi-select" id="productCategory">
@@ -122,22 +137,18 @@
                         </div>
                     </div>
 
-
-
-                    <div class="form-group prices">
-                        <div class="price-box">
-                            <label for="productPrice">Price</label>
-                            <input type="number" id="productPrice" placeholder="e. 250" required>
+                    <!-- Product Brand & weight -->
+                    <div class="weight-brand-field">
+                        <div class="form-group">
+                            <label for="productBrand">Brand</label>
+                            <input type="text" id="productBrand" placeholder="e. Jui" required>
+                            <div class="helper">Product Brand</div>
                         </div>
-                        <div class="discount-box">
-                            <label for="productDiscount">Discount (%)</label>
-                            <input type="number" id="productDiscount" placeholder="e. 10" required>
+                        <div class="form-group">
+                            <label for="productWeight">Weight (in gm)</label>
+                            <input type="number" id="productWeight" placeholder="e. 100" required>
+                            <div class="helper">Product Weight</div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="productStock">Stock</label>
-                        <input type="number" id="productStock" placeholder="e. 100" required>
                     </div>
 
                     <div class="form-group">
@@ -150,19 +161,46 @@
                         <input type="text" id="ProductFeatures" placeholder="e. Paraben Free, Sulfate Free" required>
                     </div>
 
+
+                    <h5 class="pricing-inventory-section-header">Pricing & inventory</h5>
+                    <div class="pricing-inventory-section">
+                        <div class="form-group">
+                            <label for="productPrice">Price</label>
+                            <input type="number" id="productPrice" placeholder="e. 250" required>
+                            <div class="helper">Product Price</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productDiscount">Discount (%)</label>
+                            <input type="number" id="productDiscount" placeholder="e. 10" required>
+                            <div class="helper">0-100 %</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productStock">Stock</label>
+                            <input type="number" id="productStock" placeholder="e. 100" required>
+                            <div class="helper">Available Units</div>
+                        </div>
+                    </div>
+
                     <div class="form-actions">
-                        <button type="submit" class="submit-btn">Save Product</button>
                         <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="submit-btn">Save Product</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+
+
     <div class="modal" id="productViewModal">
 
     </div>
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/products.js"></script>
     <script src="/admin/js/notifications.js"></script>

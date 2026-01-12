@@ -214,6 +214,30 @@ app.get("/api/users/profile", authenticateToken, async (req, res) => {
   }
 });
 
+// Get user by id (admin or owner)
+app.get("/api/users/:id", authenticateToken, async (req, res) => {
+  try {
+    const data = await readDataFile();
+    const user = data.users.find((u) => u.id === req.params.id);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    // Only allow if requester is the same user or an admin
+    if (req.user.id !== req.params.id) {
+      const requester = data.users.find((u) => u.id === req.user.id);
+      if (!requester || requester.role !== "admin") {
+        return res.status(403).json({ error: "Access denied" });
+      }
+    }
+
+    const { password, ...userWithoutPassword } = user;
+    res.json(userWithoutPassword);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching user" });
+  }
+});
+
 // Update user profile
 app.put("/api/users/profile", authenticateToken, async (req, res) => {
   try {
@@ -305,12 +329,37 @@ app.put("/api/users/profile", authenticateToken, async (req, res) => {
 app.get("/api/users/orders", authenticateToken, async (req, res) => {
   try {
     const data = await readDataFile();
+    // Support both `userId` and legacy `customerId` in orders
     const userOrders = data.orders.filter(
-      (order) => order.userId === req.user.id
+      (order) =>
+        order.userId === req.user.id || order.customerId === req.user.id
     );
     res.json(userOrders);
   } catch (error) {
     res.status(500).json({ error: "Error fetching orders" });
+  }
+});
+
+// Get another user's orders (admin or owner)
+app.get("/api/users/:id/orders", authenticateToken, async (req, res) => {
+  try {
+    const data = await readDataFile();
+    const id = req.params.id;
+
+    // Only allow if requester is the same user or an admin
+    if (req.user.id !== id) {
+      const requester = data.users.find((u) => u.id === req.user.id);
+      if (!requester || requester.role !== "admin") {
+        return res.status(403).json({ error: "Access denied" });
+      }
+    }
+
+    const userOrders = data.orders.filter(
+      (order) => order.userId === id || order.customerId === id
+    );
+    res.json(userOrders);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching user orders" });
   }
 });
 
