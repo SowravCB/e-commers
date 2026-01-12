@@ -13,7 +13,6 @@
     <script src="../js/api.js"></script>
     <script src="../js/auth.js"></script>
     <script src="../js/account.js"></script>
-</head>
 
 <body>
     <!-- Reuse your existing navbar and footer structure -->
@@ -22,7 +21,7 @@
             <div class="account-sidebar">
                 <div class="user-info">
                     <div class="user-avatar">
-                        <img src="" alt="Profile" id="userAvatar">
+                        <img src="/assets/svg/default-profile-img.png" alt="Profile" id="userAvatar">
                     </div>
                     <h3 id="userName">Loading...</h3>
                     <p id="userEmail">Loading...</p>
@@ -178,15 +177,48 @@
                         <div class="setting-group">
                             <h3>Notification Preferences</h3>
                             <div class="notification-settings">
-                                <label>
-                                    <input type="checkbox" id="emailNotif"> Email Notifications
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="orderUpdates"> Order Updates
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="promotions"> Promotional Offers
-                                </label>
+                                <div class="account-setting-item">
+                                    <div class="as-info">
+                                        <label class="notif-label">
+                                            <div class="notif-text">
+                                                <h4>Email Notifications</h4>
+                                                <p>Receive notifications about orders and updates via email</p>
+                                            </div>
+                                            <div class="switch">
+                                                <input type="checkbox" id="emailNotif">
+                                                <span class="slider round"></span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="account-setting-item">
+                                    <div class="as-info">
+                                        <label class="notif-label">
+                                            <div class="notif-text">
+                                                <h4>Order Updates</h4>
+                                                <p>Get notified when new orders are placed</p>
+                                            </div>
+                                            <div class="switch">
+                                                <input type="checkbox" id="orderUpdates">
+                                                <span class="slider"></span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="account-setting-item">
+                                    <div class="as-info">
+                                        <label class="notif-label">
+                                            <div class="notif-text">
+                                                <h4>Promotional Offers</h4>
+                                                <p>Get the Promotional notifications</p>
+                                            </div>
+                                            <div class="switch">
+                                                <input type="checkbox" id="promotions">
+                                                <span class="slider"></span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -194,8 +226,6 @@
             </div>
         </div>
     </main>
-    <script src="/Make-Over/js/script.js"></script>
-    <script src="/Make-Over/js/account.js"></script>
 </body>
 
 </html>

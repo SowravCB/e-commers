@@ -106,24 +106,34 @@ function viewUser(userId) {
   const userDetails = document.getElementById("userDetails");
   userDetails.innerHTML = `
         <div class="user-info">
-            <h3>${user.name}</h3>
-            <p><strong>User ID:</strong> ${user.id}</p>
-            <p><strong>Email:</strong> ${user.email}</p>
-            <p><strong>Role:</strong> <span class="role ${user.role}">${
-    user.role
-  }</span></p>
-            <p><strong>Status:</strong> <span class="status ${user.status}">${
+        <div class="img-name">
+        <img src="${
+          user.avatar || "/assets/svg/default-profile-img.png"
+        }" alt="Profile Picture" class="user-avatar">
+        <div class="name-id">
+          <h3>${user.name}</h3>
+          <p><strong>User ID : </strong> ${user.id}</p>
+            </div>
+        </div>
+        <div class="info-grid">
+<div><span>Email :</span><p>${user.email}</p></div>
+<div><span>Role :</span><p class="role ${user.role}">${user.role}</p></div>
+<div><span>Phone Number :</span><p>${user.phone}</p></div>
+<div><span>Status :</span><p class="status ${user.status}">${
     user.status
-  }</span></p>
-            <p><strong>Joined Date:</strong> ${formatDate(user.joinedDate)}</p>
-            <p><strong>Last Login:</strong> ${formatDate(user.lastLogin)}</p>
-            
+  }</p></div>
+
+<div><span>Joined Date :</span><p>${formatDate(user.joinedDate)}</p></div>
+<div><span>Last Login :</span><p>${formatDate(user.lastLogin)}</p></div>
+
+</div>
+
+
             <div class="user-stats">
-                <h4>Activity</h4>
-                <p><strong>Total Orders:</strong> ${user.orders}</p>
-                <p><strong>Total Spent:</strong> $${user.totalSpent.toFixed(
+                <div><span>Total Orders</span><p>${user.orders}</p></div>
+                <div><span>Total Spands</span><p>৳. ${user.totalSpent.toFixed(
                   2
-                )}</p>
+                )}</p></div>
             </div>
         </div>
     `;
@@ -245,4 +255,47 @@ document.querySelectorAll(".close-modal").forEach((button) => {
 // Initial load
 document.addEventListener("DOMContentLoaded", () => {
   fetchUsers();
+});
+
+// GSAP Animations
+let tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+tl.from(".settings-header", { y: -50, opacity: 0, duration: 0.5 });
+tl.from(".settings-section", {
+  y: 50,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2,
+});
+
+let sdBar = gsap.timeline();
+
+sdBar.from(".sidebar", { y: -250, opacity: 0, duration: 0.5 });
+sdBar.from(".sidebar .nav-item", {
+  x: -50,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+
+let nav = gsap.timeline();
+
+nav.from(".navbar", { y: -50, opacity: 0, duration: 0.5 });
+nav.from(".navbar .nav-link", {
+  y: -20,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+
+nav.from(".main-container .head-title .left", {
+  y: -20,
+  opacity: 0,
+  duration: 0.3,
+});
+
+nav.from(".users-container", {
+  y: 50,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2,
 });

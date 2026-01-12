@@ -31,7 +31,8 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>`;
       messageText.textContent = " Admin login successful! Redirecting...";
-      messageText.style.color = "#39ff14";
+      messageText.style.color = "#3d8b30ff";
+      messageText.style.fontWeight = "600";
 
       localStorage.setItem("loggedInUser", JSON.stringify(user));
 

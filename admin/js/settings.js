@@ -189,3 +189,39 @@ document.addEventListener("DOMContentLoaded", () => {
   loadUserData();
   loadSavedPreferences();
 });
+
+// GSAP Animations
+let tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+tl.from(".settings-header", { y: -50, opacity: 0, duration: 0.5 });
+tl.from(".settings-section", {
+  y: 50,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2,
+});
+
+let sdBar = gsap.timeline();
+
+sdBar.from(".sidebar", { y: -250, opacity: 0, duration: 0.5 });
+sdBar.from(".sidebar .nav-item", {
+  x: -50,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+
+let nav = gsap.timeline();
+
+nav.from(".navbar", { y: -50, opacity: 0, duration: 0.5 });
+nav.from(".navbar .nav-link", {
+  y: -20,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+
+nav.from(".main-container .head-title .left", {
+  y: -20,
+  opacity: 0,
+  duration: 0.3,
+});

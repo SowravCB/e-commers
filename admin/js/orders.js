@@ -107,13 +107,15 @@ function viewOrder(orderId) {
         <div class="order-info">
             <h3>Order #${order.id}</h3>
             <div class="customer-info">
-                <p><strong>Customer:</strong> ${order.customer}</p>
-                <p><strong>Email:</strong> ${order.email}</p>
-                <p><strong>Date:</strong> ${formatDate(order.date)}</p>
-                <p><strong>Status:</strong> <span class="status ${
-                  order.status
-                }">${order.status}</span></p>
-                <p><strong>Payment Method:</strong> ${order.paymentMethod}</p>
+            <div><span>Customer Name :</span><p>${order.customer}</p></div>
+            <div><span>Email :</span><p>${order.email}</p></div>
+            <div><span>Status :</span><p class="status ${order.status}">${
+    order.status.charAt(0).toUpperCase() + order.status.slice(1)
+  }</p></div>
+            <div><span>Date :</span><p>${formatDate(order.date)}</p></div>
+            <div><span>Payment Method :</span><p>${
+              order.paymentMethod
+            }</p></div>
             </div>
             
             <h4>Order Items</h4>
@@ -200,3 +202,46 @@ window.addEventListener("click", (e) => {
 
 // Initial load
 fetchOrders();
+
+// GSAP Animations
+let tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+tl.from(".settings-header", { y: -50, opacity: 0, duration: 0.5 });
+tl.from(".settings-section", {
+  y: 50,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2,
+});
+
+let sdBar = gsap.timeline();
+
+sdBar.from(".sidebar", { y: -250, opacity: 0, duration: 0.5 });
+sdBar.from(".sidebar .nav-item", {
+  x: -50,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+
+let nav = gsap.timeline();
+
+nav.from(".navbar", { y: -50, opacity: 0, duration: 0.5 });
+nav.from(".navbar .nav-link", {
+  y: -20,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+
+nav.from(".main-container .head-title .left", {
+  y: -20,
+  opacity: 0,
+  duration: 0.3,
+});
+
+nav.from(".orders-container", {
+  y: 50,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2,
+});
